@@ -1,0 +1,13 @@
+@mixin card-container($background-color: white) {
+    background-color: $background-color;
+    @include border-radius();
+    @include box-shadow();
+    @include transition();
+}
+
+
+@mixin card-container-clear() {
+    background-color: none;
+    @include border-radius();
+    @include box-shadow(none);
+}

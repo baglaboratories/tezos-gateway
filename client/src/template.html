@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% for (var chunk in htmlWebpackPlugin.options.head) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[htmlWebpackPlugin.options.head[chunk]].entry %>"  type="text/javascript"></script>
+    <link href="<%= htmlWebpackPlugin.files.chunks[htmlWebpackPlugin.options.head[chunk]].css %>" rel="stylesheet" type="text/css"></link>
+    <% } %>
+    <% for (var chunk in htmlWebpackPlugin.options.body) { %>
+    <link href="<%= htmlWebpackPlugin.files.chunks[htmlWebpackPlugin.options.body[chunk]].css %>" rel="stylesheet" type="text/css"></link>
+    <% } %>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#005cab">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#005cab">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Tezos Gateway</title>
+  </head>
+
+  <body>
+    <div id='app'>
+    </div>
+
+    <div id='site-scripts'>
+      <% for (var chunk in htmlWebpackPlugin.options.body) { %>
+      <script src="<%= htmlWebpackPlugin.files.chunks[htmlWebpackPlugin.options.body[chunk]].entry %>" type="text/javascript"></script>
+      <% } %>
+    </div>
+  </body>
+</html>

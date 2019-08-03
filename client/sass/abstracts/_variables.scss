@@ -1,0 +1,312 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Primary Color Scheme
+// -----------------------------------------------------------------------------
+
+$primary-accent: #004a7c;
+$primary-accent-light: #3fa7ff;
+
+$white: #fff;
+
+$blue: #009DDA;
+$blue-10:  #EBF7FC;
+$blue-100: #99D8F0;
+$blue-200: #73C9EB;
+$blue-300: #4CBAE5;
+$blue-400: #26ACE0;
+$blue-500: #009DDA;
+$blue-600: #0086BA;
+$blue-700: #006E99;
+$blue-800: #005678;
+$blue-900: #003F57;
+
+
+// -----------------------------------------------------------------------------
+
+// Important titles
+$background-black: #1A1D26;
+$absolute-black: #000000;
+$absolute-black1: #111111;
+$absolute-black2: #222222;
+$black: #111111;
+
+// Background inside components
+$black-100: #FAFAFA;
+
+//Only background
+$black-200: #F5F5F5;
+
+// TBD
+$black-300: #EEE;
+
+// Disabled background/text
+$black-400: #CCC;
+
+// Sub text
+$black-500: #999;
+
+// Regular text
+$black-600: #666;
+
+// Sidebar dark black
+$sidebar-dark-color: lighten($black, 10%);
+
+// -----------------------------------------------------------------------------
+// Secondary Color Scheme
+// -----------------------------------------------------------------------------
+
+$indigo: #4554A4;
+$indigo-100: #B5BBDB;
+$indigo-200: #99A1CD;
+$indigo-300: #7C87BF;
+$indigo-400: #616DB2;
+$indigo-500: #4554A4;
+$indigo-600: #3B478C;
+$indigo-700: #303B73;
+$indigo-800: #262E5A;
+$indigo-900: #1C2242;
+
+$blueberry: #2379BF;
+$blueberry-100: #A7C9E5;
+$blueberry-200: #86B5DC;
+$blueberry-300: #65A1D2;
+$blueberry-400: #448DC9;
+$blueberry-500: #2379BF;
+$blueberry-600: #1E67A3;
+$blueberry-700: #195586;
+$blueberry-800: #134269;
+$blueberry-900: #0E304C;
+
+$aqua: #09BCD3;
+$aqua-100: #9DE4ED;
+$aqua-200: #78DAE7;
+$aqua-300: #52D0E0;
+$aqua-400: #2EC6DA;
+$aqua-500: #09BCD3;
+$aqua-600: #08A0B4;
+$aqua-700: #068494;
+$aqua-800: #056774;
+$aqua-900: #044B54;
+
+$avocado: #009688;
+$avocado-100: #99D5CF;
+$avocado-200: #73C5BE;
+$avocado-300: #4CB5AB;
+$avocado-400: #26A69A;
+$avocado-500: #009688;
+$avocado-600: #008074;
+$avocado-700: #00695F;
+$avocado-800: #00524B;
+$avocado-900: #003C36;
+
+$lime: #50B748;
+$lime-100: #B9E2B6;
+$lime-200: #9FD79B;
+$lime-300: #84CC7F;
+$lime-400: #6AC263;
+$lime-500: #50B748;
+$lime-600: #449C3D;
+$lime-700: #388033;
+$lime-800: #2C6428;
+$lime-900: #20491D;
+
+$lemon: #F9D324;
+$lemon-100: #FDEDA7;
+$lemon-200: #FCE787;
+$lemon-300: #FBE065;
+$lemon-400: #FADA45;
+$lemon-500: #F9D324;
+$lemon-600: #D4B41F;
+$lemon-700: #AF9419;
+$lemon-800: #897414;
+$lemon-900: #64540E;
+
+$apricot: #F7941D;
+$apricot-100: #FCD4A5;
+$apricot-200: #FBC483;
+$apricot-300: #F9B460;
+$apricot-400: #F8A43F;
+$apricot-500: #F7941D;
+$apricot-600: #D27E19;
+$apricot-700: #AD6814;
+$apricot-800: #885110;
+$apricot-900: #633B0C;
+
+$papaya: #F1612F;
+$papaya-100: #F9C0AC;
+$papaya-200: #F7A88D;
+$papaya-300: #F5906D;
+$papaya-400: #F3794E;
+$papaya-500: #F1612F;
+$papaya-600: #CD5328;
+$papaya-700: #A94421;
+$papaya-800: #84351A;
+$papaya-900: #602713;
+
+$tomato: #EC3927;
+$tomato-100: #F7B0A9;
+$tomato-200: #F59288;
+$tomato-300: #F27467;
+$tomato-400: #EF5747;
+$tomato-500: #EC3927;
+$tomato-600: #C93121;
+$tomato-700: #A6281B;
+$tomato-800: #821F15;
+$tomato-900: #5E1710;
+
+$dragon-fruit: #DD2B85;
+$dragon-fruit-100: #F1AACE;
+$dragon-fruit-200: #EC8BBC;
+$dragon-fruit-300: #E76AA9;
+$dragon-fruit-400: #E24B97;
+$dragon-fruit-500: #DD2B85;
+$dragon-fruit-600: #BC2571;
+$dragon-fruit-700: #9B1E5D;
+$dragon-fruit-800: #791849;
+$dragon-fruit-900: #581135;
+
+$plum: #8F3E97;
+$plum-100: #D2B2D5;
+$plum-200: #C296C6;
+$plum-300: #B078B6;
+$plum-400: #A05CA6;
+$plum-500: #8F3F97;
+$plum-600: #7A3680;
+$plum-700: #642C6A;
+$plum-800: #4F2353;
+$plum-900: #39193C;
+
+// -----------------------------------------------------------------------------
+// Layout Variables
+// -----------------------------------------------------------------------------
+
+// Container's maximum width
+// @type Length
+$min-width: 500px !default;
+$max-width: 940px !default;
+
+$header-height: 75px;
+$navigation-height: 40px;
+
+// -----------------------------------------------------------------------------
+// Font Variables
+// -----------------------------------------------------------------------------
+
+// Font stacks
+$text-font-stack-regular: 'Lato', sans-serif !default;
+
+// Font sizes
+$font-size-56: 56px;
+$font-size-38: 38px;
+$font-size-32: 32px;
+$font-size-28: 28px;
+$font-size-22: 22px;
+$font-size-20: 20px;
+$font-size-18: 18px;
+$font-size-16: 16px;
+$font-size-14: 14px;
+$font-size-12: 12px;
+
+// Font weights
+$font-weight-100: 100;
+$font-weight-200: 200;
+$font-weight-300: 300;
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700;
+$font-weight-800: 800;
+$font-weight-900: 900;
+
+// Font styles
+
+$font-italic: italic;
+$font-normal: normal;
+
+// Default line height
+$line-height: 1.5;
+
+// -----------------------------------------------------------------------------
+// Opacity Variables
+// -----------------------------------------------------------------------------
+
+$opacity-default: 1;
+$opacity-hover: 0.8;
+
+// -----------------------------------------------------------------------------
+// Spacing Variables
+// -----------------------------------------------------------------------------
+
+$spacing-base: 4px;
+
+$spacing-4: $spacing-base; // 4px
+$spacing-8: $spacing-base * 2; // 8px
+$spacing-12: $spacing-base * 3; // 12px
+$spacing-16: $spacing-base * 4; // 16px
+$spacing-20: $spacing-base * 5; // 20px
+$spacing-24: $spacing-base * 6; // 24px
+$spacing-28: $spacing-base * 7; // 28px
+$spacing-32: $spacing-base * 8; // 32px
+$spacing-36: $spacing-base * 9; // 36px
+$spacing-40: $spacing-base * 10; // 40px
+$spacing-44: $spacing-base * 11; // 44px
+$spacing-48: $spacing-base * 12; // 48px
+
+// Other
+$sidebar-width: 240px;
+$toolbar-height: 54px;
+
+// -----------------------------------------------------------------------------
+// Animation Variables
+// -----------------------------------------------------------------------------
+
+$animation-duration: .25s;
+
+// -----------------------------------------------------------------------------
+// Styling Variables
+// -----------------------------------------------------------------------------
+
+$border-radius: 2px;
+$border-color: #222222;
+
+//Table styling
+$table-row-height: $spacing-48;
+
+//Shadow related css
+$shadow-default: 0 3px 5px 0 rgba(0,0,0,0.10);
+$card-shadow: 0px 1px 3px 0px #D4D4D5;
+
+// -----------------------------------------------------------------------------
+// Temporary Variables
+// -----------------------------------------------------------------------------
+
+$shadow-toolbar: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

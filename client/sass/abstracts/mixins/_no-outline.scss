@@ -1,0 +1,9 @@
+@mixin no-outline {
+    outline: None;
+    &:focus {
+        outline: None;
+    }
+    &:active {
+        outline: None;
+    }
+}

@@ -1,0 +1,10 @@
+$tooltip-triangle: 8px;
+
+@mixin tooltip() {
+  display: inline-block;
+  background: rgba($black, 0.95);
+  position: relative;
+  min-height: 48px;
+  box-shadow: $shadow-default;
+  border-radius: $border-radius;
+}

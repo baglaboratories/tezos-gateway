@@ -1,0 +1,20 @@
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+@import "vendor/normalize";
+
+@import "base/base";
+@import "base/fonts";
+@import "base/helpers";
+@import "base/typography";
+@import "base/spacing";
+@import "base/forms";
+@import "base/alignment";
+
+@import '~semantic-ui-css/semantic.css';
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+@import "~@blueprintjs/table/lib/css/table.css";
+
+@import "themes/default";

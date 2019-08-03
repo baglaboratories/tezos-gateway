@@ -1,0 +1,11 @@
+@mixin ellipsis($width: 100px) {
+    width: $width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin breakword($width: 100px) {
+    width: $width;
+    word-wrap: break-word;
+}

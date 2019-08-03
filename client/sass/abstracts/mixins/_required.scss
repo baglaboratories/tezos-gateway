@@ -1,0 +1,5 @@
+@mixin required-form {
+  content: '*';
+  color: $tomato;
+  margin-right: $spacing-8;
+}

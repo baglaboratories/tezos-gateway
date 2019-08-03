@@ -1,0 +1,85 @@
+// -----------------------------------------------------------------------------
+// Floats
+// -----------------------------------------------------------------------------
+
+.float-left {
+  float: left;
+}
+
+.float-center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.float-right {
+  float: right;
+}
+
+// -----------------------------------------------------------------------------
+// Flex
+// -----------------------------------------------------------------------------
+
+.flex {
+  display: flex;
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+// flex-align
+
+.flex--align-center {
+  align-items: center;
+}
+
+.flex--align-self-center {
+  align-self: center;
+}
+
+.flex--align-self-end {
+  align-self: flex-end;
+}
+
+// flex-direction
+
+.flex--direction-column {
+  flex-direction: column;
+}
+
+.flex--direction-row {
+  flex-direction: row;
+}
+
+.flex--direction-initial {
+  flex-direction: initial;
+}
+
+// justify-content
+
+.flex--justify-start {
+  justify-content: flex-start;
+}
+
+.flex--justify-end {
+  justify-content: flex-end;
+}
+
+.flex--justify-center {
+  justify-content: center;
+}
+
+.flex--justify-between {
+  justify-content: space-between;
+}
+
+.flex--justify-around {
+  justify-content: space-around;
+}
+
+// align-items
+
+.flex--align-items-center {
+  align-items: center;
+}

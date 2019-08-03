@@ -1,0 +1,7 @@
+@mixin error-message {
+  display: block;
+  font-size: $font-size-12;
+  font-weight: $font-weight-400;
+  color: $tomato;
+  margin-top: $spacing-4;
+}

@@ -1,0 +1,158 @@
+// -----------------------------------------------------------------------------
+// Basic typography rules.
+// -----------------------------------------------------------------------------
+
+body {
+  font-family: $text-font-stack-regular;
+  font-weight: $font-weight-400;
+  font-style: $font-normal;
+  font-size: $font-size-14;
+  color: $white;
+  -webkit-font-smoothing: antialiased;
+}
+
+// -----------------------------------------------------------------------------
+// Class typography rules - Presets
+// -----------------------------------------------------------------------------
+
+
+// Display/Big numbers text
+.text-display-3 {
+  font-size: $font-size-56;
+  font-family: $text-font-stack-regular;
+  font-weight: $font-weight-300;
+}
+
+.text-display-2 {
+  font-size: $font-size-38;
+  font-family: $text-font-stack-regular;
+  font-weight: $font-weight-300;
+}
+
+.text-display-1 {
+  font-size: $font-size-32;
+  font-family: $text-font-stack-regular;
+  font-weight: $font-weight-300;
+}
+
+// Title/header text
+.text-title-4 {
+  font-size: $font-size-22;
+  font-family: $text-font-stack-regular;
+  font-weight: $font-weight-400;
+}
+
+.text-title-3 {
+  font-size: $font-size-20;
+  font-family: $text-font-stack-regular;
+  font-weight: $font-weight-400;
+}
+
+.text-title-2 {
+  font-size: $font-size-18;
+  font-family: $text-font-stack-regular;
+  font-weight: $font-weight-400;
+}
+.text-title-2--bold {
+  font-weight: $font-weight-700;
+}
+
+.text-title-1 {
+  font-size: $font-size-16;
+  font-family: $text-font-stack-regular;
+  font-weight: $font-weight-400;
+}
+
+// Body Text
+.text-body-1 {
+  font-size: $font-size-14;
+  font-family: $text-font-stack-regular;
+  font-weight: $font-weight-400;
+  line-height: $line-height;
+}
+
+.text-body-2 {
+  font-size: $font-size-14;
+  font-family: $text-font-stack-regular;
+  font-weight: $font-weight-700;
+  line-height: $line-height;
+}
+
+// Captions
+.text-caption-1 {
+  font-size: $font-size-12;
+  font-weight: $font-weight-400;
+  font-family: $text-font-stack-regular;
+  line-height: $line-height;
+}
+
+// Captions modifications
+.text-caption--uppercase, .text-body--uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// -----------------------------------------------------------------------------
+// Class typography rules - Colors
+// -----------------------------------------------------------------------------
+
+.text-blue {
+  color: $blue;
+}
+
+.text-aqua {
+  color: $aqua;
+}
+
+.text-tomato {
+  color: $tomato;
+}
+
+.text-lime {
+  color: $lime;
+}
+
+.text-apricot {
+  color: $apricot;
+}
+
+.text-black {
+  color: $black;
+}
+
+.text-black-300 {
+  color: $black-300;
+}
+
+.text-black-400 {
+  color: $black-400;
+}
+
+.text-black-500 {
+  color: $black-500;
+}
+
+.text-black-600 {
+  color: $black-600;
+}
+
+.text-white {
+  color: $white;
+}
+
+
+// -----------------------------------------------------------------------------
+// Typography adjustments
+// -----------------------------------------------------------------------------
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
