@@ -1,3 +1,7 @@
+build
+
+client/public/index.html
+
 # Logs
 logs
 *.log
