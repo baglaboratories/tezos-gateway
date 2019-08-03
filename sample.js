@@ -89,3 +89,43 @@ const debitCredits = async () => {
 
 // depositCredits();
 // debitCredits();
+
+
+/**
+ * Parsing a signed transaction hex is done by performing the following:
+ *
+ * POST https://alphanet-node.tzscan.io/chains/main/blocks/head/helpers/parse/operations
+ * Request:
+ * {
+ *   "operations": [
+ *     {
+ *       "data": "0800002122d44d997e158c36c60649d198c4175dad425efa09d2a405f44e00f6f0b40201420eaa410ac21addf427211cddd6115cba385a94000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+ *       "branch": "BLpcXF8ADJbGuyUKNv7TypXRd5rqnoPn3PMqJLNBeRSr4VFeUuK"
+ *     }
+ *   ]
+ * }
+ *
+ * Response:
+ * [
+ *   {
+ *     "branch": "BLpcXF8ADJbGuyUKNv7TypXRd5rqnoPn3PMqJLNBeRSr4VFeUuK",
+ *     "contents": [
+ *       {
+ *         "kind": "transaction",
+ *         "source": "tz1NfEiS2uJsX43vowNjau5pdqg3Nvy8whvc",
+ *         "fee": "1274",
+ *         "counter": "86610",
+ *         "gas_limit": "10100",
+ *         "storage_limit": "0",
+ *         "amount": "5060726",
+ *         "destination": "KT1Ec3jNXyxyA54nezwcjGDRoutECJCQjpya"
+ *       }
+ *     ],
+ *     "signature": "edsigtXomBKi5CTRf5cjATJWSyaRvhfYNHqSUGrn4SdbYRcGwQrUGjzEfQDTuqHhuA8b2d8NarZjz8TRf65WkpQmo423BtomS8Q"
+ *   }
+ * ]
+ *
+ * The length of 'contents' key will determine the number of transactions the user wants to perform.
+ *
+ * Reference: https://tezos.stackexchange.com/questions/1199/how-to-use-rpc-parse-operations-endpoint/1210#1210
+ */
