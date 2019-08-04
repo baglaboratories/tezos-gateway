@@ -4,38 +4,3 @@
   height: inherit;
   background-color: #F5F6FA;
 }
-
-:local(.menu) {
-  border-radius: 0 !important;
-  border: none !important;
-  margin-bottom: 0 !important;
-}
-
-:local(.content) {
-  padding: 30px;
-}
-
-:local(.logo) {
-  margin-left: 5px;
-  width: 80px;
-}
-
-:local(.account) {
-  display: flex;
-  align-items: center;
-}
-
-:local(.accountIcon) {
-  color: #005aad;
-  cursor: pointer;
-  height: 26px;
-  width: 26px;
-}
-
-:local(.addressTag) {
-  height: 26px;
-
-  @media (max-width: 768px) {
-    display: none !important;
-  }
-}

@@ -52,7 +52,7 @@ module.exports = {
   },
 
   entry: {
-    app: ['@babel/polyfill', './client/src/ReduxApp.jsx'],
+    app: './client/src/ReduxApp.jsx',
   },
 
   output: {

@@ -5,8 +5,14 @@
 }
 
 :local(.logo) {
-  margin-left: 5px;
-  width: 80px;
+  width: 45px !important;
+  height: 45px !important;
+}
+
+:local(.logoText) {
+  font-size: 22px;
+  font-weight: 800;
+  padding-left: 8px;
 }
 
 :local(.account) {

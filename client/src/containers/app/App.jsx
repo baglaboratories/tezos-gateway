@@ -1,46 +1,27 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import createAction from 'utils/action';
+import { Route } from 'react-router-dom';
 
+import Home from 'containers/home/home.route';
+import Learn from 'containers/learn/learn.route';
 import Navigation from 'components/Navigation';
 
-import RootRoute from '../../routes';
-import { appProp } from './app.reducers';
-
-import styles from './css/app.scss';
-
-const STYLES = {
-  CONTENT: styles.content,
-};
+import styles from './css/app.scss'; // eslint-disable-line
 
 class App extends Component {
-  state = { activeItem: 'learn' }
-
-  componentDidMount() {}
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  state = {}
 
   render() {
-    const { activeItem } = this.state;
-
     return (
-      <React.Fragment>
-        <Navigation
-          activeItem={activeItem}
-          handleItemClick={this.handleItemClick}
-        />
-        <div className={STYLES.CONTENT}>
-          <RootRoute />
+      <>
+        <Route path="/" component={Navigation} />
+        <div style={{ padding: 15 }}>
+          <Route exact path="/" component={Home} />
+          <Route path="/learn-more" component={Learn} />
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }
-
-App.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  app: appProp.isRequired,
-};
 
 export default connect(state => ({ ...state }))(App);

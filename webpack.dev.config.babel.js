@@ -1,9 +1,8 @@
-const path = require('path');
-const webpack = require('webpack');
-const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
+const webpack = require('webpack');  // eslint-disable-line
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');  // eslint-disable-line
+const HtmlWebpackPlugin = require('html-webpack-plugin');  // eslint-disable-line
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');  // eslint-disable-line
+const FileManagerPlugin = require('filemanager-webpack-plugin');  // eslint-disable-line
 let config = require('./webpack.main.config.js');
 
 config = {

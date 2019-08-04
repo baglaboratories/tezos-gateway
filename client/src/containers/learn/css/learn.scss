@@ -1,0 +1,5 @@
+@import '../../../../sass/common.scss';
+
+:local(.card) {
+  box-shadow: $card-shadow !important;
+}
