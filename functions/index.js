@@ -1,52 +1,82 @@
+/**
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+'use strict';
+
 const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+admin.initializeApp();
 const express = require('express');
-const cors = require('cors');
-
-import { listAccountTransactions } from './utilsAnalytics';
-// Already initialized admin SDK instance
-const admin = require("services/admin.js");
-
-//Document data structure might look like thsi:
-// Collection Name => tezGatewayUsers
-// documentID => user Hash
-// { 2jnr4k: { value: 100 , createAt: 122414235423, lastRequest: 122445 }, 
-//   3jnr5k: { value: 50 , createAt: 152414235423, lastRequest: 12234234 } }
-// functions.firestore.document("tezGatewayUsers/{userHash}");
-
+const cookieParser = require('cookie-parser')();
+const cors = require('cors')({origin: true});
 const app = express();
 
-// Automatically allow cross-origin requests
-app.use(cors({ origin: true }));
+// Express middleware that validates Firebase ID Tokens passed in the Authorization HTTP header.
+// The Firebase ID token needs to be passed as a Bearer token in the Authorization HTTP header like this:
+// `Authorization: Bearer <Firebase ID Token>`.
+// when decoded successfully, the ID Token content will be added as `req.user`.
+const validateFirebaseIdToken = async (req, res, next) => {
+  console.log('Check if request is authorized with Firebase ID token');
 
-// Add middleware to authenticate requests
-app.use(myMiddleware);
+  if ((!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) &&
+      !(req.cookies && req.cookies.__session)) {
+    console.error('No Firebase ID token was passed as a Bearer token in the Authorization header.',
+        'Make sure you authorize your request by providing the following HTTP header:',
+        'Authorization: Bearer <Firebase ID Token>',
+        'or by passing a "__session" cookie.');
+    res.status(403).send('Unauthorized');
+    return;
+  }
 
-// build multiple CRUD interfaces:
-// curl -X GET -H "Content-Type:application/json" -H "X-TezRequest: tz1WpPzK6NwWVTJcXqFvYmoA6msQeVy1YP6z" 
-// HTTP_TRIGGER_ENDPOINT/tezosGateway/?tezAddress=tz1aCy8b6Ls4Gz7m5SbANjtMPiH6dZr9nnS2'
-app.get('/:tezAddress', (req, res) => {
-    console.log(req)
-    //TODO: @Andrew how can I create this as a function with a couple of if statements?
-    let requestAccount = req.get('x-tezrequest');
-    const gatewayAccountValue = await admin.firestore.collection('tezGatewayUsers').doc(requestAccount).get().data();
-    if ( gatewayAccountValue.value > 0 ) {
-        res.status(200).send(listAccountTransactions(req.params.tezAddress))
-        admin.firestore.collection('tezGatewayUsers').document(requestAccount).updateData(
-            [
-                "value": FieldValue.increment(-1),
-                "lastRequest": FieldValue.serverTimestamp()
-        ])
-    }
-    return res.status(200).send(`Oh sorry, but no more credits available for account ${requestAccount}`)
-    );
-}
-// Expose Express API as a single Cloud Function:
+  let idToken;
+  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
+    console.log('Found "Authorization" header');
+    // Read the ID Token from the Authorization header.
+    idToken = req.headers.authorization.split('Bearer ')[1];
+  } else if(req.cookies) {
+    console.log('Found "__session" cookie');
+    // Read the ID Token from cookie.
+    idToken = req.cookies.__session;
+  } else {
+    // No cookie
+    res.status(403).send('Unauthorized');
+    return;
+  }
+
+  try {
+    const decodedIdToken = await admin.auth().verifyIdToken(idToken);
+    console.log('ID Token correctly decoded', decodedIdToken);
+    req.user = decodedIdToken;
+    next();
+    return;
+  } catch (error) {
+    console.error('Error while verifying Firebase ID token:', error);
+    res.status(403).send('Unauthorized');
+    return;
+  }
+};
+
+app.use(cors);
+app.use(cookieParser);
+app.use(validateFirebaseIdToken);
+// Enpoint:  https://us-central1-tezos-gateway.cloudfunctions.net/tezosGateway
+app.get('/hello', (req, res) => {
+  res.send(`Hello ${req.user.name}`);
+});
+
+// This HTTPS endpoint can only be accessed by your Firebase Users.
+// Requests need to be authorized by providing an `Authorization` HTTP header
+// with value `Bearer <Firebase ID Token>`.
 exports.tezosGateway = functions.https.onRequest(app);
-
-
-
-// app.get('/:id', (req, res) => res.status(200).send(Widgets.getById(req.params.id)));
-// app.post('/', (req, res) => res.status(200).send(Widgets.create()));
-// app.put('/:id', (req, res) => res.status(200).send(Widgets.update(req.params.id, req.body)));
-
-// app.get('/', (req, res) => res.status(200).send(Widgets.list()));

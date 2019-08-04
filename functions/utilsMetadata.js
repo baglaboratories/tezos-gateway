@@ -32,7 +32,4 @@ async function listAttributeValues( cryptoRef ) {
     console.log(`${util.inspect(platforms, false, 2, false)}`);
 }
 
-export default listAttributeValues();
-export default listAttributes();
-export default listEntities();
-export default listNetworks();
+export { listAttributeValues, listAttributes, listEntities, listNetworks };

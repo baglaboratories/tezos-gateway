@@ -1,5 +1,5 @@
-import { ConseilDataClient, ConseilQueryBuilder, ConseilSortDirection, ConseilOperator } from 'conseiljs';
-import * as util from 'util';
+const { ConseilDataClient, ConseilQueryBuilder, ConseilSortDirection, ConseilOperator } = require('conseiljs');
+const util = require('util');
 
 const platform = 'tezos';
 const network = 'alphanet';
@@ -26,9 +26,9 @@ async function listAccountTransactions( address ) {
 
     const sendResult = await ConseilDataClient.executeEntityQuery(conseilServer, platform, network, entity, sendQuery);
     const receiveResult = await ConseilDataClient.executeEntityQuery(conseilServer, platform, network, entity, receiveQuery);
-    const transactions = sendResult.concat(receiveResult).sort((a, b) => { return a['timestamp'] - b['timestamp'] });
+    const transactions = sendResult.concat(receiveResult).sort(( a, b ) => { return a['timestamp'] - b['timestamp'] });
 
     console.log(`${util.inspect(transactions, false, 2, false)}`);
 }
 
-export default listAccountTransactions();
+module.exports = listAccountTransactions;
