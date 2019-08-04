@@ -2,6 +2,7 @@
   "name": "tezos-gateway",
   "description": "route requests cost based to tezos node",
   "dependencies": {
+    "conseiljs": "^0.2.6",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.1",
     "express": "^4.14.1",
